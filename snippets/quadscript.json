@@ -1,0 +1,67 @@
+{
+	"Initialise Namespace": {
+		"prefix": "namespace",
+		"body": [
+			"namespace ${1:name}",
+			"{",
+			"\t${2}",
+			"\t",
+			"\tvoid main() {",
+			"\t\tsys.println(\"hello coolmap world\");",
+			"",
+			"\t\t$$player1.giveInventoryItem(\"weapon_deck\");",
+			"\t\t$$player1.giveInventoryItem(\"weapon_cctv\");",
+			"\t\t$$player1.giveInventoryItem(\"weapon_weevil\");",
+			"\t}",
+			"}"
+		],
+		"description": "Initialise a namespace. It should match the map and script filenames."
+	},
+	"Void": {
+		"prefix": "void",
+		"body": [
+			"void ${1:function_name}() {",
+			"\t${2}",
+			"}"
+		],
+		"description": "Create a basic function."
+	},
+	"Function": {
+		"prefix": "function",
+		"body": [
+			"void ${1:function_name}() {",
+			"\t${2}",
+			"}"
+		],
+		"description": "Create a basic function."
+	},
+	"If Statement": {
+		"prefix": "if",
+		"body": [
+			"if (${1:variable} == ${2:value}) {",
+			"\t${3}",
+			"}"
+		],
+		"description": "Create an if statement.\nVariable refers to a boolean."
+	},
+	"If-Else Statement": {
+		"prefix": "ifelse",
+		"body": [
+			"if (${1:variable} == ${2:value}) {",
+			"\t${3}",
+			"} else {",
+			"\t${4}",
+			"}"
+		],
+		"description": "Create an if-else statement."
+	},
+	"While Statement": {
+		"prefix": "while",
+		"body": [
+			"while(${1:conditional}) {",
+			"\t${2}",
+			"}"
+		],
+		"description": "Create a while statement."
+	}
+}
