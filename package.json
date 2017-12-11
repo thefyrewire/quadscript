@@ -2,15 +2,20 @@
 	"name": "quadscript",
     "displayName": "QuadScript",
     "description": "Language support for Quadrilateral Cowboy script files.",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "thefyrewire",
 	"icon": "images/icon.png",
 	"license": "MIT",
 	"engines": {
         "vscode": "^1.18.0"
     },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thefyrewire/quadscript.git"
+	},
     "categories": [
-        "Languages"
+        "Languages",
+		"Themes"
     ],
 	"contributes": {
         "languages": [{
