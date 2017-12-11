@@ -8,7 +8,7 @@ Currently only syntax highlighting and snippets are supported, however autocompl
 
 ### Syntax Highlighting
 
-Highlighting of key events as defined in *doom_events.script* and definitions in *doom_defs.script* makes the code easier to read and navigate. Keywords missing? Let me know with an [issue](https://github.com/sbrink/vscode-elm/issues)!
+Highlighting of key events as defined in *doom_events.script* and definitions in *doom_defs.script* makes the code easier to read and navigate. Keywords missing? Let me know with an [issue](https://github.com/thefyrewire/quadscript/issues)!
 
 ![Syntax Highlighting](/images/quadscript_syntax.gif)
 
@@ -18,6 +18,6 @@ Some basic snippets are available. You can also type **namespace** when creating
 
 ## Release Notes
 
-### 1.0.0
+### 0.1.0
 
 Initial release of QuadScript Language Support.
