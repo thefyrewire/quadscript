@@ -1,7 +1,8 @@
-# Change Log
-All notable changes to the "script" extension will be documented in this file.
+### 0.1.1
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Fixed: folder structure
+- Changed: cleaned up unnecessary files
 
-## [Unreleased]
+### 0.1.0
+
 - Initial release
