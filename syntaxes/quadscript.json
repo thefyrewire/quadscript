@@ -15,38 +15,32 @@
 		},
 		"def-boolean": {
 			"patterns": [{
-				"name": "constant.language.boolean.quadscript",
+				"name": "storage.type.def.boolean.quadscript",
 				"match": "\\b(boolean)\\b"
 			}]
 		},
 		"boolean-literal": {
 			"patterns": [{
-				"name": "doom.defs",
+				"name": "constant.language.boolean.quadscript",
 				"match": "\\b(true|false|TRUE|FALSE)\\b"
 			}]
 		},
 		"namespace": {
 			"patterns": [{
-				"name": "global.namespace.quadscript",
+				"name": "storage.modifier.namespace.quadscript",
 				"match": "\\b(namespace)\\b"
 			}]
 		},
-		"def-float": {
+		"def-types": {
 			"patterns": [{
-				"name": "def.float.quadscript",
-				"match": "\\b(float)\\b"
+				"name": "storage.type.def.quadscript",
+				"match": "\\b(float|entity|vector|string)\\b"
 			}]
 		},
-		"def-entity": {
+		"operators": {
 			"patterns": [{
-				"name": "def.entity.quadscript",
-				"match": "\\b(entity)\\b"
-			}]
-		},
-		"assignment-operator": {
-			"patterns": [{
-				"name": "keyword.operator.assignment.quadscript",
-				"match": "="
+				"name": "keyword.operator.quadscript",
+				"match": "[|!%?~+:\\-=&\\\\*^]+"
 			}]
 		},
 		"comparison-operator": {
@@ -68,73 +62,80 @@
 		},
 		"digits": {
 			"patterns": [{
-				"name": "constant.numeric.quadscript",
+				"name": "constant.numeric.integer.quadscript",
 				"match": "\\b([0-9]+\\.*)\\b"
 			}]
 		},
 		"void-function": {
 			"patterns": [{
-				"name": "function.void.quadscript",
+				"name": "storage.type.function.quadscript",
 				"match": "\\b(void)\\b"
 			}]
 		},
 		"thread": {
 			"patterns": [{
-				"name": "function.thread.quadscript",
+				"name": "constant.language.thread.quadscript",
 				"match": "\\b(thread)\\b"
 			}]
 		},
 		"object-variable": {
 			"patterns": [{
-				"name": "variable.object.quadscript",
+				"name": "variable.language.quadscript",
 				"match": "\\$\\w+"
 			}]
 		},
 		"comment": {
 			"patterns": [{
-				"name": "comment",
+				"name": "comment.quadscript",
 				"match": "(//).*$\\n?"
+			}]
+		},
+		"comment-block": {
+			"patterns": [{
+            	"begin": "/\\*",
+            	"end": "\\*/",
+				"name": "comment.quadscript"
 			}]
 		},
 		"sys": {
 			"patterns": [{
-				"name": "global.sys.quadscript",
+				"name": "support.function.sys.quadscript",
 				"match": "\\b(sys)\\b"
 			}]
 		},
 		"events-main": {
 			"patterns": [{
-				"name": "events.main.quadscript",
+				"name": "entity.name.function.events.main.quadscript",
 				"match": "\\b(remove|getName|setName|activate|activateTargets|numTargets|getTarget|randomTarget|bind|bindPosition|bindToJoint|unbind|removeBinds|setOwner|setModel|setSkin|getWorldOrigin|setWorldOrigin|getOrigin|setOrigin|getAngles|setAngles|getLinearVelocity|setLinearVelocity|getAngularVelocity|setAngularVelocity|getSize|setSize|getMins|getMaxs|isHidden|hide|show|touches|clearSignal|getShaderParm|setShaderParm|setShaderParms|setColor|getColor|cacheSoundShader|startSoundShader|stopSound|startSound|fadeSound|setGuiParm|setGuiFloat|setGui|getNextKey|setKey|getKey|getIntKey|getFloatKey|getVectorKey|getEntityKey|restorePosition|distanceTo|distanceToPoint|startFx|waitFrame|wait|hasFunction|callFunction|setNeverDormant|terminate|pause|waitFor|waitForThread|print|println|say|assert|trigger|setcvar|getcvar|random|getTime|killthread|threadname|getEntity|spawn|respawn|copySpawnArgs|setSpawnArg|SpawnString|SpawnFloat|SpawnVector|clearPersistantArgs|setPersistantArg|getPersistantString|getPersistantFloat|getPersistantVector|angToForward|angToRight|angToUp|sin|cos|sqrt|vecNormalize|vecLength|DotProduct|CrossProduct|VecToAngles|onSignal|clearSignalThread|setCamera|firstPerson|trace|tracePoint|getTraceFraction|getTraceEndPos|getTraceNormal|getTraceEntity|getTraceJoint|getTraceBody|fadeIn|fadeOut|fadeTo|music|error|warning|strLength|strLeft|strRight|strSkip|strMid|strToFloat|radiusDamage|isClient|isMultiplayer|getFrameTime|getTicsPerSecond|cacheSoundShader|debugLine|debugArrow|debugCircle|debugBounds|drawText|influenceActive|start|stop|setShader|getLightParm|setLightParm|setLightParms|setRadiusXYZ|setRadius|On|Off|fadeOutLight|fadeInLight|Toggle|launchMissiles|startRagdoll|leftFoot|rightFoot|stopMoving|stopRotating|speed|time|decelTime|accelTime|moveTo|moveToPos|move|accelTo|decelTo|rotateDownTo|rotateUpTo|rotateTo|rotate|rotateOnce|bob|sway|openPortal|closePortal|accelSound|decelSound|moveSound|enableSplineAngles|disableSplineAngles|removeInitialSplineAngles|startSpline|stopSpline|isMoving|isRotating|enable|disable|open|close|lock|isOpen|isLocked|setFingerAngle|stopFingers|becomeNonSolid|isAtRest|enableDamage|getJointHandle|clearAllJoints|clearJoint|setJointPos|setJointAngle|getJointPos|getJointAngle|getOwner|nextWeapon|weaponState|useAmmo|addToClip|ammoInClip|ammoAvailable|totalAmmoCount|clipSize|isInvisible|playAnim|playCycle|animDone|setBlendFrames|getBlendFrames|weaponReady|weaponOutOfAmmo|weaponReloading|weaponHolstered|weaponRising|weaponLowering|flashlight|launchProjectiles|createProjectile|melee|setLightParm|setLightParms|getWorldModel|getProjectileState|markUsed|SetConstraintPosition|enableEyeFocus|disableEyeFocus|leftFoot|rightFoot|stopAnim|playAnim|playCycle|idleAnim|setSyncedAnimWeight|setBlendFrames|getBlendFrames|animState|getAnimState|inAnimState|finishAction|animDone|overrideAnim|preventPain|enableAnim|disablePain|enablePain|getPainAnim|setAnimPrefix|hasAnim|checkAnim|chooseAnim|animLength|animDistance|hasEnemies|nextEnemy|closestEnemyToPoint|setNextState|setState|getState|getHead|getButtons|getMove|getViewAngles|enableWeapon|disableWeapon|getCurrentWeapon|getPreviousWeapon|selectWeapon|getWeaponEntity|openPDA|inPDA|getIdealWeapon|randomPath|findEnemy|findEnemyAI|findEnemyInCombatNodes|closestReachableEnemyOfEntity|heardSound|setEnemy|clearEnemy|muzzleFlash|createMissile|attackMissile|fireMissileAtTarget|launchMissile|attackMelee|directDamage|radiusDamageFromJoint|attackBegin|attackEnd|meleeAttackToJoint|randomPath|canBecomeSolid|becomeSolid|becomeNonSolid|becomeRagdoll|stopRagdoll|setHealth|getHealth|allowDamage|ignoreDamage|getCurrentYaw|turnTo|turnToPos|turnToEntity|moveStatus|stopMove|moveToCover|moveToEnemy|moveToEnemyHeight|moveOutOfRange|moveToAttackPosition|wander|moveToEntity|moveToPosition|slideTo|facingIdeal|faceEnemy|faceEntity|getCombatNode|enemyInCombatCone|waitMove|getJumpVelocity|entityInAttackCone|canSee|enemyRange|enemyRange2D|setTalkTarget|getTalkTarget|getEnemy|getEnemyPos|getEnemyEyePos|predictEnemyPos|canHitEnemy|canHitEnemyFromAnim|canHitEnemyFromJoint|enemyPositionValid|chargeAttack|testChargeAttack|testAnimMoveTowardEnemy|testAnimMove|testMoveToPosition|testMeleeAttack|testAnimAttack|shrivel|preBurn|burn|clearBurn|setSmokeVisibility|numSmokeEmitters|waitAction|stopThinking|getTurnDelta|getMoveType|setMoveType|saveMove|restoreMove|allowMovement|enableClip|disableClip|enableGravity|disableGravity|enableAFPush|disableAFPush|setFlySpeed|setFlyOffset|clearFlyOffset|getClosestHiddenTarget|getRandomTarget|travelDistanceToPoint|travelDistanceToEntity|travelDistanceBetweenEntities|travelDistanceBetweenPoints|lookAt|lookAtEnemy|setBoneMod|kill|wakeOnFlashlight|setTalkState|locateEnemy|kickObstacles|getObstacle|pushPointIntoAAS|getTurnRate|setTurnRate|animTurn|allowHiddenMovement|findActorsInBounds|canReachPosition|canReachEntity|canReachEnemy|getReachableEntityPosition|vagary_ChooseObjectToThrow|vagary_ThrowObjectAtEnemy)\\b"
 			}]
 		},
 		"events-d3xp": {
 			"patterns": [{
-				"name": "events.d3xp.quadscript",
+				"name": "entity.name.function.events.d3xp.quadscript",
 				"match": "\\b(moveToPositionDirect|setAnimation|getAnimationLength|rotateVector|giveInventoryItem|randomInt|getGuiParm|getGuiParmFloat|guiNamedEvent|setGuiStates|removeInventoryItem|getIdealWeapon|setPowerupTime|isPowerupActive|weaponAvailable|startWarp|stopHelltime|toggleBloom|setBloomParms|startWeaponSmoke|stopWeaponSmoke|startWeaponParticle|stopWeaponParticle|startWeaponLight|stopWeaponLight|ejectBrass|projectileCreateProjectile|projectileLaunchProjectile|setGravity|asin|acos|launchProjectilesEllipse|launchPowerup)\\b"
 			}]
 		},
 		"events-deck": {
 			"patterns": [{
-				"name": "events.deck.quadscript",
+				"name": "entity.name.function.events.deck.quadscript",
 				"match": "\\b(setDeckScript|deck_cls|deck_print|deck_printline|deck_split|deck_split2|deck_split3|deck_getArg|deck_hasArg|callFunctionArg)\\b"
 			}]
 		},
 		"events-player": {
 			"patterns": [{
-				"name": "events.player.quadscript",
+				"name": "entity.name.function.events.player.quadscript",
 				"match": "\\b(setFrobbable|usePicker|isHolding|pressEnter|settext_obj|settext_alarms|settext_missionclock|viewlook|clamberScripted|useVehicle|setFrozen|inDeck|stopPicker|getAmmo|spendAmmo|setAmmo|clearPowerups|removeWeaponItem|useDeck|getEyePos|getPickerState|writesticky|setcasing|setviewangle|setplayerskin|setgodmode|sethipclock|toggleHaze|lerpviewangle|isInFOV|killDeckthreads|forcestand|forcegui|setcanfrob)\\b"
 			}]
 		},
 		"events-world": {
 			"patterns": [{
-				"name": "events.world.quadscript",
+				"name": "entity.name.function.events.world.quadscript",
 				"match": "\\b(setPlacerAngle|getPlacerAngle|getPlacerAngleRaw|getPlacerPos|getPlacerValid|getPlacerFloatPos|GetOriginalPosition|GetOriginalAngle|setAFGravity|setCamFov|setCameraTarget|clearCameraTarget|getNearestEnemy|canSeeEntity|floatRound|getClassEntity|getIndex|camOff|camOn|camreset|hudMessage|debugMessage|setAFActive|setAFRest|setNoclip|getNoclip|getTraceSky|IsEnabled|triggeractivate|SetWidth|UpdatePeak|activatepad|laseroff|laseron|laserenable|fadeLight|IsOn|resetlight|isHidden|getString|parseTime|parseTime2|parseTimeMS|getMapname|callMap|lerp|getworldspawnint|setcutscene|spawndecal|rundeckcommand|callsavegame|killcctvs|getMapIndex|PanelDisconnect|PanelReset|setClipModel|setSolid|turretactivate|turretisactive|portalactivate|triggerpushactivate|sentryactivate|issentryactive|sentryturn|sentrypitch|sentryface|sentryfire|sentrystand|sentrygetlaser|sentrykill|weevilforward|weevilturn|weevilstop|weevilstand|weevillight|weeviljump|weevilgravity|weevilgetgravity|weevildoplug|isweevilplugconnected|weevileyemove|camturretactivate|keypadopen|startAnim|launcherkill|recordstart|recordplay|recordstop|worldreset|geteventcount|getlasteventtimestamp|setrecordstarttime|moveplayertoghost|recordclear|setcomplete|getcomplete|recordspawn|recordunspawn|recordlaunchaim|onAlarm|onSighted|onDefuse|onReset|powersawreset|powerscrewreset|screwreset|glassreset|contractcamreset|clockreset|clocksettime|tablefoldreset|staticactivate|doorfoldingactivate|emitterenable|isemitterenabled|zeppelinactivate|datajackreset|weevilopendoor|getdatajackopenstate|countdownreset|countdownstart|countdownhasTripped|buttonswitcheractivate|updategravity|toggletrail|attractortoggle|setcamerapointvisibility|vacuumtoggle|loopsetactive|steam_addtimestat|steam_getglobalstat|steam_updatefriendtimes|steam_setachievement)\\b"
 			}]
 		},
 		"doom-defs": {
 			"patterns": [{
-				"name": "doom.defs.quadscript",
+				"name": "storage.modifier.quadscript",
 				"match": "\\b(GAME_FPS|GAME_FRAMETIME|NULL|GRAVITY_DEFAULT|JACKDISTANCE|SAFE_CAPTUREDISTANCE|UP|DOWN|LEFT|RIGHT|FORWARD|BACK|REL_UP|REL_DOWN|REL_LEFT|REL_RIGHT|REL_FORWARD|REL_BACK|EAST|NORTH|WEST|SOUTH|X_AXIS|Y_AXIS|Z_AXIS|YAW|PITCH|ROLL|M_PI|DEG2RAD|RAD2DEG|ALL_PARTICLES|SIG_TOUCH|SIG_USE|SIG_TRIGGER|SIG_REMOVED|SIG_DAMAGE|SIG_BLOCKED|SIG_MOVER_POS1|SIG_MOVER_POS2|SIG_MOVER_1TO2|SIG_MOVER_2TO1|SIG_DOOR_CLOSED|SIG_DOOR_OPEN|SIG_DOOR_OPENING|SIG_DOOR_CLOSING|BUTTON_ATTACK|BUTTON_TALK|BUTTON_WALKING|BUTTON_ANY|JOINTMOD_NONE|JOINTMOD_LOCAL|JOINTMOD_LOCAL_OVERRIDE|JOINTMOD_WORLD|JOINTMOD_WORLD_OVERRIDE|BIT|SHADERPARM_RED|SHADERPARM_GREEN|SHADERPARM_BLUE|SHADERPARM_ALPHA|SHADERPARM_TIMESCALE|SHADERPARM_TIMEOFFSET|SHADERPARM_DIVERSITY|SHADERPARM_MODE|SHADERPARM_TIME_OF_DEATH|CONTENTS_SOLID|CONTENTS_OPAQUE|CONTENTS_WATER|CONTENTS_PLAYERCLIP|CONTENTS_MONSTERCLIP|CONTENTS_MOVEABLECLIP|CONTENTS_IKCLIP|CONTENTS_BLOOD|CONTENTS_BODY|CONTENTS_PROJECTILE|CONTENTS_CORPSE|CONTENTS_RENDERMODEL|CONTENTS_TRIGGER|CONTENTS_AAS_SOLID|CONTENTS_AAS_OBSTACLE|CONTENTS_FLASHLIGHT_TRIGGER|MASK_ALL|MASK_SOLID|MASK_MONSTERSOLID|MASK_PLAYERSOLID|MASK_DEADSOLID|MASK_WATER|MASK_OPAQUE|MASK_SHOT_RENDERMODEL|MASK_SHOT_BOUNDINGBOX|SND_CHANNEL_ANY|SND_CHANNEL_VOICE|SND_CHANNEL_VOICE2|SND_CHANNEL_BODY|SND_CHANNEL_BODY2|SND_CHANNEL_BODY3|SND_CHANNEL_WEAPON|SND_CHANNEL_ITEM|SND_CHANNEL_HEART|SND_CHANNEL_PDA|SND_CHANNEL_DEMONIC|ANIMCHANNEL_ALL|ANIMCHANNEL_TORSO|ANIMCHANNEL_LEGS|ANIMCHANNEL_HEAD|ANIMCHANNEL_EYELIDS|PROJECTILE_SPAWNED|PROJECTILE_CREATED|PROJECTILE_LAUNCHED|PROJECTILE_FIZZLED|PROJECTILE_EXPLODED|eachFrame|waitUntil|BERSERK|INVISIBILITY|MEGAHEALTH|ADRENALINE|INVULNERABILITY|HELLTIME|ENVIROSUIT|ENVIROTIME)\\b"
 			}]
 		},
@@ -151,7 +152,7 @@
 					"include": "#boolean-literal"
 				},
 				{
-					"include": "#assignment-operator"
+					"include": "#operators"
 				},
 				{
 					"include": "#comparison-operator"
@@ -163,10 +164,7 @@
 					"include": "#sys"
 				},
 				{
-					"include": "#def-float"
-				},
-				{
-					"include": "#def-entity"
+					"include": "#def-types"
 				},
 				{
 					"include": "#strings"
@@ -187,6 +185,9 @@
 					"include": "#comment"
 				},
 				{
+					"include": "#comment-block"
+				},
+				{
 					"include": "#events"
 				},
 				{
@@ -194,6 +195,9 @@
 				},
 				{
 					"include": "#selector"
+				},
+				{
+					"include": "#var-declaration"
 				}
 			]
 		},
@@ -228,17 +232,29 @@
 		"selector": {
 			"captures": {
 				"1": {
-					"name": "function.void.quadscript"
+					"name": "storage.type.function.quadscript"
 				},
 				"2": {
-					"name": "global.sys.quadscript"
+					"name": "storage.modifier.quadscript"
 				},
 				"3": {
-					"name": "function.void.quadscript"
+					"name": "storage.type.function.quadscript"
 				}
 			},
 			"match": "(@selector\\()(.*?)(\\))",
 			"name": "function.void.quadscript"
+		},
+		"var-declaration": {
+			"captures": {
+				"1": {
+					"name": "storage.type.def.quadscript"
+				},
+				"2": {
+					"name": "entity.name.type.quadscript"
+				}
+			},
+			"match": "(whoa|there)\\s+(\\w+)",
+			"name": "meta.expression.quadscript"
 		}
 	},
 	"scopeName": "source.script"

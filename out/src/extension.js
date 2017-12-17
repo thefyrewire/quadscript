@@ -1,8 +1,9 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
-const vscode_1 = require("vscode");
+const vscode = require("vscode");
 const vscode_languageclient_1 = require("vscode-languageclient");
+const quadLoad_1 = require('./quadLoad');
 function activate(context) {
     // The server is implemented in node
     let serverModule = context.asAbsolutePath(path.join('server', 'server.js'));
@@ -22,7 +23,7 @@ function activate(context) {
             // Synchronize the setting section 'languageServerExample' to the server
             configurationSection: 'QuadScript',
             // Notify the server about file changes to '.clientrc files contain in the workspace
-            fileEvents: vscode_1.workspace.createFileSystemWatcher('**/.clientrc')
+            fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
         }
     };
     // Create the language client and start the client.
@@ -30,6 +31,8 @@ function activate(context) {
     // Push the disposable to the context's subscriptions so that the 
     // client can be deactivated on extension deactivation
     context.subscriptions.push(disposable);
+    context.subscriptions.push(quadLoad_1.main());
+    context.subscriptions.push(quadLoad_1.loadObjects());
 }
 exports.activate = activate;
 //# sourceMappingURL=extension.js.map
